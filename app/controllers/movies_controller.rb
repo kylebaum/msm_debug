@@ -12,17 +12,17 @@ class MoviesController < ApplicationController
   end
 
   def create_row
-    create = Movie.new
-    create.title = params[:title]
-    create.year = params[:year]
-    create.duration = params[:duration]
-    create.description = params[:description]
-    create.image_url = params[:image_url]
-    create.director_id = params[:director_id]
-    create.save
-    Movie.save
+    @movie = Movie.new
+    @movie.title = params[:title]
+    @movie.year = params[:year]
+    @movie.duration = params[:duration]
+    @movie.description = params[:description]
+    @movie.image_url = params[:image_url]
+    @movie.director_id = params[:director_id]
+    @movie.save
+  
 
-    redirect_to("show")
+    render("show")
   end
 
   def edit_form

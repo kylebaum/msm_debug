@@ -11,7 +11,6 @@ class DirectorsController < ApplicationController
   end
 
   def create_row
-    @director = Director.find_by({ :id => params[:id] })
     @director = Director.new
     @director.dob = params[:dob]
     @director.name = params[:name]
