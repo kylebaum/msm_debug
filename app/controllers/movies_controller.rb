@@ -20,6 +20,7 @@ class MoviesController < ApplicationController
     create.image_url = params[:image_url]
     create.director_id = params[:director_id]
     create.save
+    Movie.save
 
     redirect_to("show")
   end
